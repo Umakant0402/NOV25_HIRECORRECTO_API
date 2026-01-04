@@ -8,8 +8,10 @@ on:
         required: true
         type: choice
         options:
-          - testng.xml
-          - src/test/resources/testng.xml
+          - regression.xml
+          - sanity.xml
+          - smoke.xml
+        default: regression.xml
       environment:
         description: 'Select Environment to run tests against'
         required: true
@@ -144,7 +146,7 @@ jobs:
           username: 24uma10@gmail.com
           password: ${{ secrets.EMAIL_TOKEN }}
           subject: 'Regression Test Execution Report - ${{ github.event.inputs.test_xml_file }} (Env: ${{ github.event.inputs.environment }})'
-          to: harshhpatel07@gmail.com
+          to: 24uma10@gmail.com
           from: 24uma10@gmail.com
           html_body: true
           body: ${{ env.EMAIL_CONTENT }}
