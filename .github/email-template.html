@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 650px;
+            margin: 20px auto;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+        .content {
+            padding: 30px 20px;
+        }
+        .summary-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-left: 5px solid #667eea;
+            margin-bottom: 25px;
+            border-radius: 4px;
+        }
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 14px;
+        }
+        .summary-row:last-child {
+            border-bottom: none;
+        }
+        .summary-label {
+            font-weight: 600;
+            color: #333;
+            flex: 0 0 40%;
+        }
+        .summary-value {
+            color: #666;
+            flex: 1;
+            text-align: right;
+            word-break: break-word;
+        }
+        h2 {
+            color: #333;
+            font-size: 20px;
+            margin: 25px 0 20px 0;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #667eea;
+        }
+        .metrics-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 25px 0;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .metric-card {
+            flex: 1;
+            min-width: 130px;
+            text-align: center;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .metric-value {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            line-height: 1;
+        }
+        .metric-label {
+            font-size: 12px;
+            color: #666;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .metric-pass .metric-value {
+            color: #27ae60;
+        }
+        .metric-fail .metric-value {
+            color: #e74c3c;
+        }
+        .metric-skip .metric-value {
+            color: #f39c12;
+        }
+        .metric-total .metric-value {
+            color: #667eea;
+        }
+        .details-section {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #fafafa;
+            border-radius: 6px;
+            border: 1px solid #e8e8e8;
+        }
+        .details-title {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 12px;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .details-content {
+            color: #666;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+        .details-content strong {
+            color: #333;
+            font-weight: 600;
+        }
+        .details-content a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px solid #667eea;
+        }
+        .details-content a:hover {
+            color: #764ba2;
+            border-bottom-color: #764ba2;
+        }
+        .details-content br {
+            line-height: 1.5;
+        }
+        .footer {
+            background-color: #f5f5f5;
+            padding: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #999;
+            border-top: 1px solid #e0e0e0;
+        }
+        .footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        .footer p {
+            margin: 5px 0;
+        }
+        .divider {
+            height: 1px;
+            background-color: #e0e0e0;
+            margin: 25px 0;
+        }
+        .info-box {
+            background-color: #e8f4f8;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+            font-size: 13px;
+            color: #333;
+        }
+        @media only screen and (max-width: 600px) {
+            .container {
+                margin: 10px;
+            }
+            .header {
+                padding: 30px 15px;
+            }
+            .header h1 {
+                font-size: 24px;
+            }
+            .content {
+                padding: 20px 15px;
+            }
+            .metrics-container {
+                flex-direction: column;
+            }
+            .metric-card {
+                min-width: 100%;
+            }
+            .summary-row {
+                flex-direction: column;
+            }
+            .summary-label {
+                flex: none;
+                margin-bottom: 5px;
+            }
+            .summary-value {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔬 Regression Test Execution Report</h1>
+        </div>
+
+        <div class="content">
+            <!-- Summary Section -->
+            <div class="summary-section">
+                <div class="summary-row">
+                    <span class="summary-label">Test Suite File:</span>
+                    <span class="summary-value">{{TEST_XML_FILE}}</span>
+                </div>
+                <div class="summary-row">
+                    <span class="summary-label">Execution Date:</span>
+                    <span class="summary-value">{{RUN_DATE}}</span>
+                </div>
+                <div class="summary-row">
+                    <span class="summary-label">Repository:</span>
+                    <span class="summary-value">{{REPOSITORY}}</span>
+                </div>
+                <div class="summary-row">
+                    <span class="summary-label">Branch:</span>
+                    <span class="summary-value">{{BRANCH}}</span>
+                </div>
+                <div class="summary-row">
+                    <span class="summary-label">Commit SHA:</span>
+                    <span class="summary-value">{{COMMIT_SHA}}</span>
+                </div>
+            </div>
+
+            <!-- Test Metrics Section -->
+            <h2>Test Execution Summary</h2>
+            <div class="metrics-container">
+                <div class="metric-card metric-total">
+                    <div class="metric-value">{{TOTAL_TESTS}}</div>
+                    <div class="metric-label">Total Tests</div>
+                </div>
+                <div class="metric-card metric-pass">
+                    <div class="metric-value">{{PASSED_TESTS}}</div>
+                    <div class="metric-label">Passed ✅</div>
+                </div>
+                <div class="metric-card metric-fail">
+                    <div class="metric-value">{{FAILED_TESTS}}</div>
+                    <div class="metric-label">Failed ❌</div>
+                </div>
+                <div class="metric-card metric-skip">
+                    <div class="metric-value">{{SKIPPED_TESTS}}</div>
+                    <div class="metric-label">Skipped ⏭️</div>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Test Details Section -->
+            <div class="details-section">
+                <div class="details-title">📊 Test Execution Details</div>
+                <div class="details-content">
+                    <strong>Workflow Run:</strong> <a href="{{WORKFLOW_URL}}">Click here to view full execution details</a><br><br>
+                    <strong>Test Framework:</strong> TestNG<br>
+                    <strong>Java Version:</strong> 17 (Temurin)<br>
+                    <strong>Operating System:</strong> Ubuntu Latest<br>
+                    <strong>Build Tool:</strong> Apache Maven<br>
+                </div>
+            </div>
+
+            <!-- Allure Report Section -->
+            <div class="details-section">
+                <div class="details-title">📈 Allure Report on GitHub Pages</div>
+                <div class="details-content">
+                    <strong>View comprehensive test analysis:</strong> <a href="{{GITHUB_PAGES_URL}}">Allure Report - Latest</a><br><br>
+                    <strong>Report Location:</strong> GitHub Pages (gh-pages branch)<br>
+                    <strong>Report Retention:</strong> Last 5 test runs maintained<br>
+                    <strong>Accessibility:</strong> Publicly accessible report with detailed metrics
+                </div>
+            </div>
+
+            <!-- Artifacts Section -->
+            <div class="details-section">
+                <div class="details-title">📦 Test Artifacts & Downloads</div>
+                <div class="details-content">
+                    <strong>Raw Allure Results:</strong> <a href="{{ARTIFACTS_URL}}">Download from Actions tab</a><br><br>
+                    <strong>Includes:</strong> Raw test data, logs, and detailed execution information
+                </div>
+            </div>
+
+            <!-- Info Box -->
+            <div class="info-box">
+                <strong>ℹ️ Note:</strong> This is an automated notification from GitHub Actions. All test results and reports are available via the links above. For detailed analysis, visit the Allure Report or check the workflow run logs.
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>🤖 Automated Test Execution Report</p>
+            <p>Repository: <a href="{{REPO_URL}}">{{REPOSITORY}}</a></p>
+            <p>This is an automated notification. Please do not reply to this email.</p>
+            <p style="margin-top: 10px; color: #bbb;">© 2026 GitHub Actions • Regression Testing Suite</p>
+        </div>
+    </div>
+</body>
+</html>
