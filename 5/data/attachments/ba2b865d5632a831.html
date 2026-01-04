@@ -1,0 +1,28 @@
+<div>POST to https://staging.api.screening.hirecorrecto.com/api/candidateScreening/generate-upload-url</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;originalFilename&quot;: &quot;recordedAudio.webm&quot;,
+    &quot;fileType&quot;: &quot;audio&quot;,
+    &quot;mimeType&quot;: &quot;audio/webm&quot;
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: application/json</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://staging.api.screening.hirecorrecto.com/api/candidateScreening/generate-upload-url&#39; -H &#39;Accept: application/json&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;originalFilename&quot;: &quot;recordedAudio.webm&quot;,
+    &quot;fileType&quot;: &quot;audio&quot;,
+    &quot;mimeType&quot;: &quot;audio/webm&quot;
+}&#39;
+</div>

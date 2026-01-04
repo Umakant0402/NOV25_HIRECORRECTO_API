@@ -1,0 +1,172 @@
+<div>Status code 200 </div>
+
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+[
+    {
+        &quot;skill&quot;: &quot;api&quot;,
+        &quot;mcq&quot;: [
+            {
+                &quot;_id&quot;: &quot;692d3aee3d9838750c2d6520&quot;,
+                &quot;questionTitle&quot;: &quot;Understanding JWT Signature Validation in Java&quot;,
+                &quot;question&quot;: &quot;Consider the following Java code snippet designed to simulate JWT validation. Assume `Jwts.builder()` generates a valid token signed with `key`. What will be printed to the console when `wrongKey` is used for parsing?&lt;br/&gt;java&lt;br/&gt;import io.jsonwebtoken.Jwts;&lt;br/&gt;import io.jsonwebtoken.SignatureAlgorithm;&lt;br/&gt;import io.jsonwebtoken.security.Keys;&lt;br/&gt;import javax.crypto.SecretKey;&lt;br/&gt;import java.util.Date;&lt;br/&gt;import java.util.concurrent.TimeUnit;&lt;br/&gt;&lt;br/&gt;public class JwtValidationExample {&lt;br/&gt;    public static void main(String[] args) {&lt;br/&gt;        // A dummy key for token generation&lt;br/&gt;        SecretKey key = Keys.secretKeyFor(SignatureAlgorithm.HS256);&lt;br/&gt;&lt;br/&gt;        // Simulate token generation&lt;br/&gt;        String token = Jwts.builder()&lt;br/&gt;                .setSubject(\&quot;user123\&quot;)&lt;br/&gt;                .setExpiration(new Date(System.currentTimeMillis() + TimeUnit.MINUTES.toMillis(10)))&lt;br/&gt;                .signWith(key)&lt;br/&gt;                .compact();&lt;br/&gt;&lt;br/&gt;        // Simulate validation with a DIFFERENT key&lt;br/&gt;        SecretKey wrongKey = Keys.secretKeyFor(SignatureAlgorithm.HS256); &lt;br/&gt;        try {&lt;br/&gt;            Jwts.parserBuilder().setSigningKey(wrongKey).build().parseClaimsJws(token);&lt;br/&gt;            System.out.println(\&quot;VALID\&quot;);&lt;br/&gt;        } catch (Exception e) {&lt;br/&gt;            System.out.println(e.getClass().getSimpleName());&lt;br/&gt;        }&lt;br/&gt;    }&lt;br/&gt;}&lt;br/&gt;&quot;,
+                &quot;options&quot;: {
+                    &quot;A&quot;: &quot;VALID&quot;,
+                    &quot;B&quot;: &quot;ExpiredJwtException&quot;,
+                    &quot;C&quot;: &quot;SignatureException&quot;,
+                    &quot;D&quot;: &quot;MalformedJwtException&quot;
+                },
+                &quot;isMultipleCorrect&quot;: false,
+                &quot;isEditorEnable&quot;: false,
+                &quot;isAiGenerated&quot;: true,
+                &quot;maxTime&quot;: 1
+            }
+        ],
+        &quot;audio&quot;: [
+            {
+                &quot;_id&quot;: &quot;692d3aee3d9838750c2d6521&quot;,
+                &quot;questionTitle&quot;: &quot;API&quot;,
+                &quot;question&quot;: &quot;&lt;p&gt;&lt;span style=\&quot;font-size: 16px\&quot;&gt;so assume that you are doing a payment from your phone and it is redirected from your account but a retailer didn&#39;t get the any confirmation on their phone so in that case your from your end request has been submitted but that is not executed from the server perspective and not received from the retailer mobile so what kind of status code will return to you in your phone from the server&lt;/span&gt;&lt;/p&gt;&quot;,
+                &quot;prepTime&quot;: 30,
+                &quot;maxTime&quot;: 1,
+                &quot;retakeCount&quot;: 2,
+                &quot;videoQuestionFileId&quot;: &quot;692d3ab53d9838750c2d6500&quot;,
+                &quot;videoQuestionTranscript&quot;: &quot; so assume that you are doing a payment from your phone and it is redirected from your account but a retailer didn&#39;t get the any confirmation on their phone so in that case your from your end request has been submitted but that is not executed from the server perspective and not received from the retailer mobile so what kind of status code will return to you in your phone from the server&quot;,
+                &quot;isAiGenerated&quot;: false
+            }
+        ],
+        &quot;video&quot;: [
+            {
+                &quot;_id&quot;: &quot;692d3aee3d9838750c2d6522&quot;,
+                &quot;questionTitle&quot;: &quot;Tell me about the HTTP Verbs in details&quot;,
+                &quot;question&quot;: &quot;&lt;p&gt;can you tell me all the HTTP methods in details like what exactly the method will work and when to use which methods&lt;/p&gt;&quot;,
+                &quot;prepTime&quot;: 30,
+                &quot;maxTime&quot;: 3,
+                &quot;retakeCount&quot;: 2,
+                &quot;videoQuestionFileId&quot;: &quot;692d3a613d9838750c2d64f8&quot;,
+                &quot;videoQuestionTranscript&quot;: &quot; can you tell me all the HTTP methods in details like what exactly the method will work and when to use which methods&quot;,
+                &quot;isAiGenerated&quot;: false
+            }
+        ],
+        &quot;subjective&quot;: [
+            {
+                &quot;_id&quot;: &quot;692d3aee3d9838750c2d6523&quot;,
+                &quot;questionTitle&quot;: &quot;API Performance Monitoring and Troubleshooting Strategy&quot;,
+                &quot;question&quot;: &quot;&lt;p&gt;Describe me the how the API is effective in testing than the UI testing&lt;/p&gt;&quot;,
+                &quot;isAiGenerated&quot;: false,
+                &quot;maxTime&quot;: 1
+            }
+        ],
+        &quot;programming&quot;: [
+            {
+                &quot;_id&quot;: &quot;692d3aee3d9838750c2d6524&quot;,
+                &quot;questionTitle&quot;: &quot;Filter and Sort Patients from API Data&quot;,
+                &quot;question&quot;: &quot;You are tasked with processing data received from a healthcare API. The API returns a list of patient records, each containing an ID, name, and age. Your goal is to implement a function that filters this list to include only patients meeting a specified minimum age requirement and then sorts the filtered patients alphabetically by their names.&lt;br/&gt;&lt;br/&gt;**Input Format:**&lt;br/&gt;The first line contains an integer `N`, representing the number of patient records.&lt;br/&gt;The next `N` lines each contain three values: an integer `id`, a string `name`, and an integer `age` for each patient, separated by spaces.&lt;br/&gt;The last line contains a single integer `minAge`, representing the minimum age for filtering.&lt;br/&gt;&lt;br/&gt;**Output Format:**&lt;br/&gt;Print the names of the filtered and sorted patients, one name per line. If no patients meet the criteria, the output should be empty.&lt;br/&gt;&lt;br/&gt;**Constraints:**&lt;br/&gt;1 &lt;= N &lt;= 100&lt;br/&gt;1 &lt;= id &lt;= 1000&lt;br/&gt;1 &lt;= name length &lt;= 20&lt;br/&gt;0 &lt;= age &lt;= 120&lt;br/&gt;0 &lt;= minAge &lt;= 120&quot;,
+                &quot;isAiGenerated&quot;: true,
+                &quot;maxTime&quot;: 6,
+                &quot;maxAttempts&quot;: 3,
+                &quot;maxCodeSize&quot;: 64,
+                &quot;timeLimit&quot;: 10,
+                &quot;memoryLimit&quot;: 128,
+                &quot;testCases&quot;: [
+                    {
+                        &quot;visible&quot;: true,
+                        &quot;input&quot;: &quot;4\n1 Emma 28\n2 David 35\n3 Charles 42\n4 Alice 30\n30&quot;,
+                        &quot;output&quot;: &quot;Charles\nDavid&quot;,
+                        &quot;explanation&quot;: &quot;Patients with age &gt;= 30 are David (35), Charles (42). Sorted alphabetically by name: Charles, David.&quot;,
+                        &quot;weightage&quot;: 20
+                    },
+                    {
+                        &quot;visible&quot;: true,
+                        &quot;input&quot;: &quot;3\n1 Max 10\n2 Nina 15\n3 Leo 5\n20&quot;,
+                        &quot;output&quot;: &quot;0&quot;,
+                        &quot;explanation&quot;: &quot;No patients have an age greater than or equal to 20. The output should be empty.&quot;,
+                        &quot;weightage&quot;: 20
+                    },
+                    {
+                        &quot;visible&quot;: true,
+                        &quot;input&quot;: &quot;1\n100 Sarah 50\n0&quot;,
+                        &quot;output&quot;: &quot;Sarah&quot;,
+                        &quot;explanation&quot;: &quot;Sarah is 50, minAge is 0. Sarah matches the criteria. Only one patient, so sorted list is just Sarah.&quot;,
+                        &quot;weightage&quot;: 20
+                    },
+                    {
+                        &quot;visible&quot;: true,
+                        &quot;input&quot;: &quot;5\n1 John 25\n2 Amy 30\n3 Ben 30\n4 Cathy 28\n5 Dan 32\n30&quot;,
+                        &quot;output&quot;: &quot;Amy\nBen\nDan&quot;,
+                        &quot;explanation&quot;: &quot;Patients with age &gt;= 30 are Amy (30), Ben (30), Dan (32). Sorted alphabetically by name: Amy, Ben, Dan.&quot;,
+                        &quot;weightage&quot;: 20
+                    },
+                    {
+                        &quot;visible&quot;: true,
+                        &quot;input&quot;: &quot;6\n1 Alex 22\n2 Brenda 45\n3 Chris 30\n4 Diana 55\n5 Ethan 28\n6 Fiona 30\n30&quot;,
+                        &quot;output&quot;: &quot;Brenda\nChris\nDiana\nFiona&quot;,
+                        &quot;explanation&quot;: &quot;Patients with age &gt;= 30 are Brenda (45), Chris (30), Diana (55), Fiona (30). Sorted alphabetically: Brenda, Chris, Diana, Fiona.&quot;,
+                        &quot;weightage&quot;: 20
+                    }
+                ],
+                &quot;supportedLanguages&quot;: [
+                    {
+                        &quot;languageId&quot;: 54,
+                        &quot;languageName&quot;: &quot;C++ (GCC 13.2.0)&quot;,
+                        &quot;starterCode&quot;: &quot;#include &lt;iostream&gt;\n#include &lt;vector&gt;\n#include &lt;string&gt;\n#include &lt;algorithm&gt;\n\n// Structure to represent a Patient\nstruct Patient {\n    int id;\n    std::string name;\n    int age;\n};\n\n// Function to compare patients by name for sorting\nbool comparePatientsByName(const Patient&amp; a, const Patient&amp; b) {\n    return a.name &lt; b.name;\n}\n\nint main() {\n    std::ios_base::sync_with_stdio(false);\n    std::cin.tie(NULL);\n\n    int N;\n    std::cin &gt;&gt; N;\n\n    std::vector&lt;Patient&gt; patients;\n    for (int i = 0; i &lt; N; ++i) {\n        int id, age;\n        std::string name;\n        std::cin &gt;&gt; id &gt;&gt; name &gt;&gt; age;\n        patients.push_back({id, name, age});\n    }\n\n    int minAge;\n    std::cin &gt;&gt; minAge;\n\n    // TODO: Implement the solution here\n    // Filter patients by minAge and then sort them by name.\n    // Print the names of the filtered and sorted patients, one per line.\n\n    // Example placeholder for output:\n    // std::vector&lt;Patient&gt; filteredAndSortedPatients; // Populate this with your solution\n    // for (const auto&amp; p : filteredAndSortedPatients) {\n    //     std::cout &lt;&lt; p.name &lt;&lt; \&quot;\\n\&quot;;\n    // }\n\n    return 0;\n}&quot;
+                    },
+                    {
+                        &quot;languageId&quot;: 62,
+                        &quot;languageName&quot;: &quot;Java (OpenJDK 21)&quot;,
+                        &quot;starterCode&quot;: &quot;import java.util.ArrayList;\nimport java.util.Collections;\nimport java.util.List;\nimport java.util.Scanner;\nimport java.util.Comparator;\nimport java.util.stream.Collectors;\n\nclass Patient {\n    int id;\n    String name;\n    int age;\n\n    public Patient(int id, String name, int age) {\n        this.id = id;\n        this.name = name;\n        this.age = age;\n    }\n\n    public String getName() {\n        return name;\n    }\n\n    public int getAge() {\n        return age;\n    }\n}\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner scanner = new Scanner(System.in);\n\n        int N = scanner.nextInt();\n        List&lt;Patient&gt; patients = new ArrayList&lt;&gt;();\n        for (int i = 0; i &lt; N; i++) {\n            int id = scanner.nextInt();\n            String name = scanner.next();\n            int age = scanner.nextInt();\n            patients.add(new Patient(id, name, age));\n        }\n\n        int minAge = scanner.nextInt();\n        scanner.close();\n\n        // TODO: Implement the solution here\n        // Filter patients by minAge and then sort them by name.\n        // Print the names of the filtered and sorted patients, one per line.\n\n        // Example placeholder for output:\n        // List&lt;Patient&gt; filteredAndSortedPatients; // Populate this with your solution\n        // for (Patient p : filteredAndSortedPatients) {\n        //     System.out.println(p.getName());\n        // }\n    }\n}&quot;
+                    },
+                    {
+                        &quot;languageId&quot;: 63,
+                        &quot;languageName&quot;: &quot;JavaScript (Node.js 18.19.0)&quot;,
+                        &quot;starterCode&quot;: &quot;const readline = require(&#39;readline&#39;);\n\nconst rl = readline.createInterface({\n    input: process.stdin,\n    output: process.stdout\n});\n\nlet lines = [];\nrl.on(&#39;line&#39;, (line) =&gt; {\n    lines.push(line);\n});\n\nrl.on(&#39;close&#39;, () =&gt; {\n    let lineIndex = 0;\n\n    const N = parseInt(lines[lineIndex++]);\n    let patients = [];\n    for (let i = 0; i &lt; N; i++) {\n        const [id, name, age] = lines[lineIndex++].split(&#39; &#39;);\n        patients.push({ id: parseInt(id), name: name, age: parseInt(age) });\n    }\n\n    const minAge = parseInt(lines[lineIndex++]);\n\n    // TODO: Implement the solution here\n    // Filter patients by minAge and then sort them by name.\n    // Print the names of the filtered and sorted patients, one per line.\n\n    // Example placeholder for output:\n    // const filteredAndSortedPatients = []; // Populate this with your solution\n    // filteredAndSortedPatients.forEach(p =&gt; console.log(p.name));\n});&quot;
+                    },
+                    {
+                        &quot;languageId&quot;: 71,
+                        &quot;languageName&quot;: &quot;Python (3.12.1)&quot;,
+                        &quot;starterCode&quot;: &quot;import sys\n\ndef solve():\n    N = int(sys.stdin.readline())\n    \n    patients = []\n    for _ in range(N):\n        id, name, age = sys.stdin.readline().split()\n        patients.append({&#39;id&#39;: int(id), &#39;name&#39;: name, &#39;age&#39;: int(age)})\n    \n    min_age = int(sys.stdin.readline())\n\n    # TODO: Implement the solution here\n    # Filter patients by min_age and then sort them by name.\n    # Print the names of the filtered and sorted patients, one per line.\n\n    # Example placeholder for output:\n    # filtered_and_sorted_patients = [] # Populate this with your solution\n    # for p in filtered_and_sorted_patients:\n    #     print(p[&#39;name&#39;])\n\nsolve()&quot;
+                    }
+                ]
+            }
+        ],
+        &quot;totalQuestions&quot;: 5
+    }
+]    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Origin-Agent-Cluster: ?1</div>
+        <div>Server: Apache/2.4.52 (Ubuntu)</div>
+        <div>X-Request-ID: 413cef74-3d29-4ca4-8bec-132d3b9d0603</div>
+        <div>RateLimit-Policy: 15000;w=60</div>
+        <div>X-Permitted-Cross-Domain-Policies: none</div>
+        <div>Referrer-Policy: no-referrer</div>
+        <div>X-Frame-Options: SAMEORIGIN</div>
+        <div>RateLimit-Remaining: 14999</div>
+        <div>Strict-Transport-Security: max-age=15552000; includeSubDomains</div>
+        <div>Access-Control-Expose-Headers: Content-Length,Content-Type,Cache-Control,Pragma,Expires</div>
+        <div>Access-Control-Allow-Credentials: true</div>
+        <div>Content-Security-Policy: default-src &#39;self&#39;;style-src &#39;self&#39; &#39;unsafe-inline&#39;;script-src &#39;self&#39;;img-src &#39;self&#39; data: https:;base-uri &#39;self&#39;;font-src &#39;self&#39; https: data:;form-action &#39;self&#39;;frame-ancestors &#39;self&#39;;object-src &#39;none&#39;;script-src-attr &#39;none&#39;;upgrade-insecure-requests</div>
+        <div>Content-Encoding: gzip</div>
+        <div>X-XSS-Protection: 0</div>
+        <div>Content-Type: application/json; charset=utf-8</div>
+        <div>Keep-Alive: timeout=5, max=100</div>
+        <div>Transfer-Encoding: chunked</div>
+        <div>RateLimit-Reset: 60</div>
+        <div>X-Content-Type-Options: nosniff</div>
+        <div>Connection: Keep-Alive</div>
+        <div>X-Download-Options: noopen</div>
+        <div>Cross-Origin-Opener-Policy: same-origin</div>
+        <div>Date: Sun, 04 Jan 2026 09:21:25 GMT</div>
+        <div>RateLimit-Limit: 15000</div>
+        <div>Cache-Control: public, max-age=300, stale-while-revalidate=60</div>
+        <div>ETag: &quot;1767518485534&quot;</div>
+        <div>X-DNS-Prefetch-Control: off</div>
+        <div>Vary: Origin,Accept-Encoding</div>
+        <div>Cross-Origin-Resource-Policy: cross-origin</div>
+</div>
+
+

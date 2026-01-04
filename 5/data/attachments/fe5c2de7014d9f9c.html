@@ -1,0 +1,168 @@
+<div>PATCH to https://staging.api.screening.hirecorrecto.com/api/candidateScreening/update-candidate-result/694770d452e582fefe7e1ebc</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;questionId&quot;: &quot;692d3aee3d9838750c2d6523&quot;,
+    &quot;type&quot;: &quot;subjective&quot;,
+    &quot;skill&quot;: &quot;api&quot;,
+    &quot;jobRoleId&quot;: &quot;68943b744df518afa9442034&quot;,
+    &quot;experience&quot;: &quot;4.0&quot;,
+    &quot;jobApplicationId&quot;: &quot;69476ed0c41f0cc9ce8110f0&quot;,
+    &quot;timeSpent&quot;: 60,
+    &quot;fullScreenExitCount&quot;: 0,
+    &quot;tabSwitchCount&quot;: 0,
+    &quot;candidateAnswer&quot;: &quot;&lt;p&gt;- More Reliable&lt;/p&gt;&lt;p&gt;- More Secure&lt;/p&gt;&lt;p&gt;- Flackness is lesser then UI&lt;/p&gt;&lt;p&gt;- Cost Effiective Early Bugs identification&lt;/p&gt;&quot;,
+    &quot;typingAnalysis&quot;: {
+        &quot;totalDuration&quot;: 54979,
+        &quot;totalCharacters&quot;: 103,
+        &quot;keystrokeCount&quot;: 119,
+        &quot;pasteEventCount&quot;: 0,
+        &quot;copyEventCount&quot;: 0,
+        &quot;focusLossCount&quot;: 2,
+        &quot;pasteAnalysis&quot;: {
+            &quot;totalPasteEvents&quot;: 0,
+            &quot;totalPastedCharacters&quot;: 0,
+            &quot;pastePercentage&quot;: 0,
+            &quot;rawPastePercentage&quot;: 0,
+            &quot;largestPaste&quot;: 0,
+            &quot;hasCodePatterns&quot;: false,
+            &quot;hasFormatting&quot;: false,
+            &quot;riskLevel&quot;: &quot;low&quot;
+        },
+        &quot;typingAnalysis&quot;: {
+            &quot;averageTypingSpeed&quot;: 1.87,
+            &quot;typingBursts&quot;: 0,
+            &quot;totalKeystrokes&quot;: 119,
+            &quot;backspaceCount&quot;: 2,
+            &quot;riskLevel&quot;: &quot;low&quot;
+        },
+        &quot;focusAnalysis&quot;: {
+            &quot;totalFocusEvents&quot;: 4,
+            &quot;focusLossCount&quot;: 2,
+            &quot;focusChangeFrequency&quot;: 0.5,
+            &quot;riskLevel&quot;: &quot;low&quot;
+        },
+        &quot;qualityAnalysis&quot;: {
+            &quot;wordCount&quot;: 15,
+            &quot;averageWordsPerMinute&quot;: 16.37,
+            &quot;hasProperStructure&quot;: false,
+            &quot;hasVariedVocabulary&quot;: true,
+            &quot;qualityScore&quot;: 1,
+            &quot;riskLevel&quot;: &quot;low&quot;
+        },
+        &quot;globalEventAnalysis&quot;: {
+            &quot;globalCopyCount&quot;: 0,
+            &quot;questionCopyCount&quot;: 0,
+            &quot;externalIntegereractionCount&quot;: 0,
+            &quot;hasQuestionCopying&quot;: false,
+            &quot;hasHighRiskCopying&quot;: false,
+            &quot;copySourceDistribution&quot;: {
+                
+            },
+            &quot;suspiciousPatternCount&quot;: 0,
+            &quot;riskLevel&quot;: &quot;low&quot;
+        },
+        &quot;copyPasteCorrelations&quot;: {
+            &quot;totalCorrelations&quot;: 0,
+            &quot;questionPasteCount&quot;: 0,
+            &quot;averageTimeBetween&quot;: 0,
+            &quot;riskLevel&quot;: &quot;low&quot;
+        },
+        &quot;riskScore&quot;: 0,
+        &quot;sessionId&quot;: &quot;typing_1766289626529_41cvu873s&quot;,
+        &quot;analysisVersion&quot;: &quot;2.0-enhanced&quot;,
+        &quot;timestamp&quot;: &quot;2025-12-21T04:01:21.509Z&quot;,
+        &quot;privacyCompliant&quot;: true
+    },
+    &quot;hasTypingAnalysis&quot;: true
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: application/json</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X PATCH &#39;https://staging.api.screening.hirecorrecto.com/api/candidateScreening/update-candidate-result/694770d452e582fefe7e1ebc&#39; -H &#39;Accept: application/json&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;questionId&quot;: &quot;692d3aee3d9838750c2d6523&quot;,
+    &quot;type&quot;: &quot;subjective&quot;,
+    &quot;skill&quot;: &quot;api&quot;,
+    &quot;jobRoleId&quot;: &quot;68943b744df518afa9442034&quot;,
+    &quot;experience&quot;: &quot;4.0&quot;,
+    &quot;jobApplicationId&quot;: &quot;69476ed0c41f0cc9ce8110f0&quot;,
+    &quot;timeSpent&quot;: 60,
+    &quot;fullScreenExitCount&quot;: 0,
+    &quot;tabSwitchCount&quot;: 0,
+    &quot;candidateAnswer&quot;: &quot;&lt;p&gt;- More Reliable&lt;/p&gt;&lt;p&gt;- More Secure&lt;/p&gt;&lt;p&gt;- Flackness is lesser then UI&lt;/p&gt;&lt;p&gt;- Cost Effiective Early Bugs identification&lt;/p&gt;&quot;,
+    &quot;typingAnalysis&quot;: {
+        &quot;totalDuration&quot;: 54979,
+        &quot;totalCharacters&quot;: 103,
+        &quot;keystrokeCount&quot;: 119,
+        &quot;pasteEventCount&quot;: 0,
+        &quot;copyEventCount&quot;: 0,
+        &quot;focusLossCount&quot;: 2,
+        &quot;pasteAnalysis&quot;: {
+            &quot;totalPasteEvents&quot;: 0,
+            &quot;totalPastedCharacters&quot;: 0,
+            &quot;pastePercentage&quot;: 0,
+            &quot;rawPastePercentage&quot;: 0,
+            &quot;largestPaste&quot;: 0,
+            &quot;hasCodePatterns&quot;: false,
+            &quot;hasFormatting&quot;: false,
+            &quot;riskLevel&quot;: &quot;low&quot;
+        },
+        &quot;typingAnalysis&quot;: {
+            &quot;averageTypingSpeed&quot;: 1.87,
+            &quot;typingBursts&quot;: 0,
+            &quot;totalKeystrokes&quot;: 119,
+            &quot;backspaceCount&quot;: 2,
+            &quot;riskLevel&quot;: &quot;low&quot;
+        },
+        &quot;focusAnalysis&quot;: {
+            &quot;totalFocusEvents&quot;: 4,
+            &quot;focusLossCount&quot;: 2,
+            &quot;focusChangeFrequency&quot;: 0.5,
+            &quot;riskLevel&quot;: &quot;low&quot;
+        },
+        &quot;qualityAnalysis&quot;: {
+            &quot;wordCount&quot;: 15,
+            &quot;averageWordsPerMinute&quot;: 16.37,
+            &quot;hasProperStructure&quot;: false,
+            &quot;hasVariedVocabulary&quot;: true,
+            &quot;qualityScore&quot;: 1,
+            &quot;riskLevel&quot;: &quot;low&quot;
+        },
+        &quot;globalEventAnalysis&quot;: {
+            &quot;globalCopyCount&quot;: 0,
+            &quot;questionCopyCount&quot;: 0,
+            &quot;externalIntegereractionCount&quot;: 0,
+            &quot;hasQuestionCopying&quot;: false,
+            &quot;hasHighRiskCopying&quot;: false,
+            &quot;copySourceDistribution&quot;: {
+                
+            },
+            &quot;suspiciousPatternCount&quot;: 0,
+            &quot;riskLevel&quot;: &quot;low&quot;
+        },
+        &quot;copyPasteCorrelations&quot;: {
+            &quot;totalCorrelations&quot;: 0,
+            &quot;questionPasteCount&quot;: 0,
+            &quot;averageTimeBetween&quot;: 0,
+            &quot;riskLevel&quot;: &quot;low&quot;
+        },
+        &quot;riskScore&quot;: 0,
+        &quot;sessionId&quot;: &quot;typing_1766289626529_41cvu873s&quot;,
+        &quot;analysisVersion&quot;: &quot;2.0-enhanced&quot;,
+        &quot;timestamp&quot;: &quot;2025-12-21T04:01:21.509Z&quot;,
+        &quot;privacyCompliant&quot;: true
+    },
+    &quot;hasTypingAnalysis&quot;: true
+}&#39;
+</div>
