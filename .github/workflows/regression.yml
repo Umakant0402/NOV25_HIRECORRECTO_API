@@ -43,7 +43,7 @@ jobs:
         id: test_execution
         run: |
           mvn clean test \
-            -DsuiteXmlFile${{ github.event.inputs.test_xml_file }} \
+            -DsuiteXmlFile=${{ github.event.inputs.test_xml_file }} \
             -Denvironment=${{ github.event.inputs.environment }} \
             -Dallure.results.directory=allure-results \
             || true
